@@ -7,13 +7,22 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
+
+  margin: 0;
+  padding: 0;
 }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway"; /* OPTIONAL: Google Fonts - title font */
   font-weight: 300;
-  color: #207178;
+  color: #000000;
+}
+
+about {
+  font-family: "Raleway"; /* OPTIONAL: Google Fonts - title font */
+  font-weight: 300;
+  color: #ffffff;
 }
 
 /* Paragraph & Typographic */
@@ -28,7 +37,7 @@ p {
 
 /* Links */
 a {
-  color: #efb64a;
+  color: #fdfeff;
   word-wrap: break-word;
 
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -68,6 +77,25 @@ a:after {
 ---------------------------------------------------*/
 
 /* Header Wrap */
+
+.no-banner .header {
+  display: none;
+}
+
+.page-title {
+  background-color: #f2f2f2;
+  padding: 36px 0;
+  border-bottom: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.page-title h1 {
+  margin: 0;
+  color: #207178;
+  font-size: 32px;
+  font-weight: 700;
+}
+
 .header {
   background: #694A38;
   background: url(images/header-bg-final.png) no-repeat center top;
@@ -172,6 +200,129 @@ a:after {
   color: #616669;
 }
 
+/* nav bar wrap */
+.navbar {
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;       /* center the inner container */
+  padding: 0 15px;
+  display: flex;
+  justify-content: center; /* center nav-links horizontally */
+  align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3b3b3c;
+}
+
+/* Research Project Styling */
+.research-project {
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.research-project:last-child {
+    border-bottom: none;
+}
+
+.research-project h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.project-details {
+    margin-top: 20px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h6 {
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.detail-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.detail-section li {
+    margin: 8px 0;
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* apply left buffer to all main info sections */
+.desc,
+.research-project,
+.page-title,
+.about,
+.container.desc,
+.container.research,
+.container .research-project {
+  padding-left: 24px;
+}
+
+/* smaller buffer on small screens */
+@media (max-width: 768px) {
+  .desc,
+  .research-project,
+  .page-title,
+  .about,
+  .container.desc,
+  .container.research,
+  .container .research-project {
+    padding-left: 12px;
+  }
+}
 
 sm {
   font-size: 12px;

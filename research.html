@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Research - Tatum Beaugh</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Toggle controls */
+        .section-toggle { display:flex; gap:8px; margin: 12px 0; }
+        .toggle-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background:#fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .toggle-btn.active {
+            background:#333;
+            color:#fff;
+            border-color:#333;
+        }
+        .research-panel { display:none; }
+        .research-panel.active { display:block; }
+        .poster-preview iframe { max-width:100%; }
+
+        /* --- ADDED: increase page margins & spacing --- */
+        /* wider horizontal padding inside container */
+        .container {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        /* on very large screens give even more side padding */
+        @media (min-width: 1200px) {
+            .container { padding-left: 96px; padding-right: 96px; }
+        }
+        /* more vertical spacing for each research block */
+        .container.desc {
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+        /* give page title and header more breathing room */
+        .page-title .container,
+        #header .container {
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        /* --- ADDED: darker link colors for better contrast --- */
+        .container a,
+        .container a:link,
+        .container a:visited {
+            color: #0b0b0b;
+        }
+        .container a:hover,
+        .container a:focus {
+            color: #000000;
+            text-decoration: underline;
+        }
+        /* make icon links match text color */
+        .container .icon-link { color: inherit; }
+
+        /* NAV LINKS: keep navigation links white to match home header */
+        .navbar .nav-links a,
+        .navbar .nav-links a:link,
+        .navbar .nav-links a:visited {
+            color: #ffffff;
+        }
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a:focus {
+            color: #ffffff;
+            opacity: 0.95;
+            text-decoration: underline;
+        }
+
+        /* --- UPDATED: black header with much larger text --- */
+        #header {
+            background-color: #000000; /* black */
+            color: #ffffff;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        #header h1 {
+            font-size: 72px;
+            line-height: 1.02;
+            margin: 0;
+            font-weight: 800;
+            color: inherit;
+            letter-spacing: -0.5px;
+        }
+
+        /* PAGE TITLE: black background & larger text */
+        .page-title {
+            background-color: #2c2b2b;
+            color: #ffffff;
+            padding-top: 56px;
+            padding-bottom: 56px;
+        }
+        .page-title .container {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        .page-title h1 {
+            font-size: 64px;
+            line-height: 1.02;
+            margin: 0;
+            font-weight: 800;
+            color: inherit;
+            letter-spacing: -0.5px;
+        }
+    </style>
+</head>
+<body class="no-banner">
+    
+    <!-- NAVIGATION MENU -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-title">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-12">
+          <h1>Research Experience</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="header" class="header">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-12">
+                    <h1>Research Projects</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESEARCH PROJECT 1 -->
+    <div class="container desc">
+        <div class="section-toggle" data-target="project-1">
+            <button class="toggle-btn active" data-view="overview">Overview</button>
+            <button class="toggle-btn" data-view="paper">Poster</button>
+        </div>
+
+        <div id="project-1-overview" class="research-panel active">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>Exploring FIA Data: Modeling Library</h5>
+                </div>
+                <div class="col-lg-6">
+                    <p><t>Overview:</t><br/>
+                        Collaborated with the USDA Forest Service on utilizing geospatial data from Google Earth Engine combined with FIA data to predict ecological factors in under-reported regions.
+                    </p>
+
+                    <p><more>
+                        This was a machine learning project focused on using the U.S. Forest Service Forest Inventory and Analysis (FIA) database to improve the ability to estimate forest characteristics at the local level. The project was divided into two teams: one focused on predicting forest mortality, while my team developed a machine learning modeling library that could estimate FIA variables across the Continental United States. We developed an interactive Streamlit and Leaflet application that combines FIA data with satellite data from Google Earth Engine, allowing users to select a local area, configure a modeling process, and generate predictions for forest characteristics such as biomass and growth.
+                    </more></p>
+
+                    <p><more>
+                        As a member of the modeling library team, my primary contribution was cleaning, organizing, and analyzing the FIA database. I worked with the tree- and plot-level data to identify relevant variables, address inconsistencies, and prepare the data for use in machine learning models. I also analyzed the dataset to better understand forest and non-forest classifications and helped ensure that the data used by our models was accurate and reliable. This work provided the foundation for the modeling and helped our team develop a tool capable of generating localized forest estimates from large-scale environmental data.
+                    </more></p>
+
+                    <p><more><strong>Skills used:</strong> Geospatial data analysis, Google Earth Engine API, ML in ecology, Data visualization</more></p>
+                    <p><more><strong>Tools used:</strong> Streamlit, Leaflet, Google Earth Engine, Python, Git, Github</more></p>
+                    <p><more><strong>Collaborators:</strong> Purdue University Data Mine Program, USDA Forest Service</more></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>August 2025 - May 2026</sm></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-1-paper" class="research-panel">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>Exploring FIA Data: Modeling Library</h5>
+                </div>
+                <div class="col-lg-6">
+                    <div class="poster-preview" style="margin: 10px 0 16px;">
+                        <iframe
+                            src="Data Mine USDA Poster.pdf#page=1&view=FitH"
+                            width="100%"
+                            height="420"
+                            style="border: 1px solid #ddd; border-radius: 6px;"
+                            title="Geospatial Modeling Poster Preview">
+                        </iframe>
+                    </div>
+
+                    <p><a href="https://github.com/TheDataMine/f2025_s2026_ndmn_usda_forestmanagement/tree/modeling_library" target="_blank"><i class="icon-link"></i> <sm>VIEW REPOSITORY</sm></a></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>August 2025 - May 2026</sm></p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+    </div>
+
+    <!-- RESEARCH PROJECT 2 -->
+    <div class="container desc">
+        <div class="section-toggle" data-target="project-2">
+            <button class="toggle-btn active" data-view="overview">Overview</button>
+            <button class="toggle-btn" data-view="paper">Poster</button>
+        </div>
+
+        <div id="project-2-overview" class="research-panel active">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>BRIDGING THE BLACK BOX: Explainable Anomaly Detection for Critical Infrastructure</h5>
+                </div>
+                <div class="col-lg-6">
+                    <p><t>Overview:</t><br/>
+                        Cyberattacks have become more frequent and complex, increasing the chance of malicious actors targeting infrastructure. Deep learning models have shown promise in being effective at detecting anomalies, but are generally uninterpretable. Our CIS framework seeks to incorporate Explainable AI (XAI) and knowledge graphs to make a more interpretable model that enhances the provided context of each detected anomaly, while balancing the predictive accuracy of deep learning models with the added XAI.
+                    </p>
+
+                    <p><more>
+                        I began this project with data exploration and preprocessing. Since I had no prior experience with network or cybersecurity data, I conducted research to understand how the data was structured and behaved. During cleaning, I identified and fixed issues such as a misspelled feature and duplicate rows. I then developed multiple XGBoost models to benchmark against our graph neural network (GNN), including both regression and classification approaches. One model used only attack data, while another used a balanced attack vs. non-attack dataset that I synthesized. I tuned these models to achieve strong performance. I also built a framework for model explainability using SHAP. After learning how SHAP values work, I applied them to interpret model predictions and understand feature importance. This became my favorite part of the project, as it deepened my understanding of how models arrive at their predictions and how explainability is quantified! This project introduced me to cybersecurity and model interpretability while strengthening my ability to collaborate in a small team.
+                    </more></p>
+
+                    <p><more><strong>Skills used:</strong> Data Cleaning, Data Analysis, Knowledge graphs, Cybersecurity fundamentals, Explainable AI (XAI)</more></p>
+                    <p><more><strong>Tools used:</strong> Python, Neo4j, XGBoost, SHAP, Sklearn, Pandas, Numpy, Git, Github</more></p>
+                    <p><more><strong>Collaborators:</strong> Angelo State University, AI-COE</more></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>September 2025 - February 2026</sm></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-2-paper" class="research-panel">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>BRIDGING THE BLACK BOX</h5>
+                </div>
+                <div class="col-lg-6">
+                    <div class="poster-preview" style="margin: 10px 0 16px;">
+                        <iframe
+                            src="CIS Framework Poster.pdf#page=1&view=FitH"
+                            width="100%"
+                            height="420"
+                            style="border: 1px solid #ddd; border-radius: 6px;"
+                            title="CIS Framework Poster Preview">
+                        </iframe>
+                    </div>
+
+                    <p><a href="https://ieeexplore.ieee.org/abstract/document/11395750" target="_blank"><i class="icon-link"></i> <sm>VIEW PAPER</sm></a></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>September 2025 - February 2026</sm></p>
+                </div>
+            </div>
+        </div>
+
+            <br>
+            <hr>
+        </div>
+
+    <!-- RESEARCH PROJECT 3 -->
+    <div class="container desc">
+        <div class="section-toggle" data-target="project-3">
+            <button class="toggle-btn active" data-view="overview">Overview</button>
+            <button class="toggle-btn" data-view="paper">Poster</button>
+        </div>
+
+        <div id="project-3-overview" class="research-panel active">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>Rhetorical Polarization on C-SPAN</h5>
+                </div>
+                <div class="col-lg-6">
+                    <p><t>Overview:</t><br/>
+                        Applied natural language processing and machine learning to understand political discourse patterns and congressional voting behavior.
+                    </p>
+
+                    <p><more>
+                        This research project investigated rhetorical polarization in the United States Congress by analyzing floor speeches from the 2009 U.S. Congress. Our team used more than 8,500 C-SPAN speeches to examine whether topics such as healthcare and the economy were associated with differences in political sentiment. We took a multimodal approach, using text, audio, and video data to develop machine learning models for classifying speeches as positive, negative, or neutral.
+                    </more></p>
+
+                    <p><more>
+                        My primary contribution focused on data processing and preparation. I worked with the video and speech data to extract and prepare transcripts for analysis, testing different transcription methods to determine which approaches produced the most useful text for our models. I cleaned and organized the resulting data and helped prepare the transcripts for the team's natural language processing and machine learning workflows. This work gave me hands-on experience working with large, unstructured datasets and preparing real-world multimedia data for machine learning applications.
+                    </more></p>
+
+                    <p><more><strong>What I Learned:</strong> Data Science, Natural Language Processing (NLP), Text/sentiment analysis, Data visualization</more></p>
+                    <p><more><strong>Collaborators:</strong> Purdue University Data Mine Program, C-SPAN Center for Scholarship and Engagement (CCSE)</more></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>August 2024 - April 2025</sm></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-3-paper" class="research-panel">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-1">
+                    <h5>Rhetorical Polarization on C-SPAN</h5>
+                </div>
+                <div class="col-lg-6">
+                    <div class="poster-preview" style="margin: 10px 0 16px;">
+                        <iframe
+                            src="https://datamine.purdue.edu/posters/TDM_Symposium2025_CSPAN_CongressoinalRhetoric.pdf#page=1&view=FitH"
+                            width="100%"
+                            height="420"
+                            style="border: 1px solid #ddd; border-radius: 6px;"
+                            title="C-SPAN Poster Preview">
+                        </iframe>
+                    </div>
+
+                    <p><a href="https://datamine.purdue.edu/posters/TDM_Symposium2025_CSPAN_CongressoinalRhetoric.pdf" target="_blank"><i class="icon-link"></i> <sm>VIEW POSTER</sm></a></p>
+                </div>
+                <div class="col-lg-3">
+                    <p><sm>August 2024 - April 2025</sm></p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+    </div>
+
+<script>
+    // Toggle logic for each section
+    document.querySelectorAll('.section-toggle').forEach(toggleBar => {
+        const targetBase = toggleBar.getAttribute('data-target');
+        const btns = toggleBar.querySelectorAll('.toggle-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const view = btn.getAttribute('data-view');
+                const overviewPanel = document.getElementById(`${targetBase}-overview`);
+                const paperPanel = document.getElementById(`${targetBase}-paper`);
+                if (view === 'overview') {
+                    overviewPanel.classList.add('active');
+                    paperPanel.classList.remove('active');
+                } else {
+                    paperPanel.classList.add('active');
+                    overviewPanel.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
